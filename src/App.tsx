@@ -1,5 +1,14 @@
+import { NextUIProvider } from "@nextui-org/react"
+import Navigation from "./components/Navigation"
+
 function App() {
-  return <div className="App"></div>
+  return (
+    <NextUIProvider>
+      <div className="App">
+        <Navigation />
+      </div>
+    </NextUIProvider>
+  )
 }
 
 export default App
