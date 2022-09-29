@@ -1,13 +1,16 @@
-import { Navbar } from "@nextui-org/react"
-import { GiElephant } from "react-icons/gi"
+import React from "react"
+import { Navbar, Text } from "@nextui-org/react"
 
-const Navigation = () => {
+type Props = {
+  children?: React.ReactNode
+}
+const Navigation: React.FC<Props> = ({ children }) => {
   return (
     <Navbar>
       <Navbar.Brand>
-        <GiElephant fontSize={30} />
-        AnElephant
+        <Text h1>AnElephant</Text>
       </Navbar.Brand>
+      {children}
     </Navbar>
   )
 }
