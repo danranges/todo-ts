@@ -1,8 +1,9 @@
 import { useState } from "react"
-import { NextUIProvider, Switch } from "@nextui-org/react"
+import { Grid, NextUIProvider, Switch } from "@nextui-org/react"
 import { darkTheme, lightTheme } from "./utils/theme"
 import { BsSunFill, BsMoonFill } from "react-icons/bs"
 import Navigation from "./components/Navigation"
+import Task from "./components/Task"
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -23,6 +24,20 @@ function App() {
             iconOff={<BsMoonFill />}
           />
         </Navigation>
+        <Grid.Container justify="center" gap={1} css={{ px: "1rem" }}>
+          <Grid>
+            <Task />
+          </Grid>
+          <Grid>
+            <Task />
+          </Grid>
+          <Grid>
+            <Task />
+          </Grid>
+          <Grid>
+            <Task />
+          </Grid>
+        </Grid.Container>
       </div>
     </NextUIProvider>
   )
