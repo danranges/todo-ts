@@ -24,7 +24,7 @@ function App() {
             iconOff={<BsMoonFill />}
           />
         </Navigation>
-        <Grid.Container justify="center" gap={1} css={{ px: "1rem" }}>
+        <Grid.Container justify="center" gap={1} css={{ p: "1rem" }}>
           <Grid>
             <Task />
           </Grid>
