@@ -8,12 +8,20 @@ import {
   Col,
   Row,
 } from "@nextui-org/react"
+import { useState } from "react"
 
 type SignUpProps = {
   goToLogIn: () => void
 }
 
 const SignUp = ({ goToLogIn }: SignUpProps) => {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
+  const handleSignUp = () => {
+    console.log(username)
+  }
+
   return (
     <Container display="flex" justify="center">
       <Card css={{ mw: "400px", my: "4rem", p: "2rem" }}>
@@ -27,7 +35,7 @@ const SignUp = ({ goToLogIn }: SignUpProps) => {
                 auto
                 color={"secondary"}
                 ripple={false}
-                onClick={goToLogIn}
+                onPress={goToLogIn}
               >
                 Log in
               </Button>
@@ -35,13 +43,25 @@ const SignUp = ({ goToLogIn }: SignUpProps) => {
           </Col>
         </Card.Header>
         <Card.Body>
-          <Input bordered clearable label="Username" />
+          <Input
+            bordered
+            clearable
+            label="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
           <Spacer y={0.5} />
-          <Input.Password bordered clearable label="Password" />
+          <Input.Password
+            bordered
+            clearable
+            label="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </Card.Body>
         <Card.Footer>
           <Row justify="flex-end">
-            <Button color={"secondary"} ghost>
+            <Button color={"secondary"} ghost onPress={handleSignUp}>
               Create Account
             </Button>
           </Row>
