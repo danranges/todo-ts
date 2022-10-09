@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 import { collection, addDoc } from "firebase/firestore"
+import { getAuth } from "firebase/auth"
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9D2NCPu34ewa419S-o-ht8wnDOJWXHss",
@@ -16,6 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
 export const db = getFirestore(app)
+export const auth = getAuth()
 
 const testAdd = async () => {
   try {

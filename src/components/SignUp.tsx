@@ -1,3 +1,6 @@
+import { useState } from "react"
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { auth } from "../data/firebase"
 import {
   Card,
   Button,
@@ -8,7 +11,6 @@ import {
   Col,
   Row,
 } from "@nextui-org/react"
-import { useState } from "react"
 
 type SignUpProps = {
   goToLogIn: () => void
@@ -18,8 +20,20 @@ const SignUp = ({ goToLogIn }: SignUpProps) => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
 
-  const handleSignUp = () => {
-    console.log(username)
+  const handleSignUp = async () => {
+    if (username && password) {
+      createUserWithEmailAndPassword(auth, username, password)
+        .then((userCredential) => {
+          const user = userCredential.user
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code
+          const errorMessage = error.message
+          console.log(errorMessage)
+          console.log(errorCode)
+        })
+    }
   }
 
   return (
