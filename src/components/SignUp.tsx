@@ -56,30 +56,32 @@ const SignUp = ({ goToLogIn }: SignUpProps) => {
             </Row>
           </Col>
         </Card.Header>
-        <Card.Body>
-          <Input
-            bordered
-            clearable
-            label="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <Spacer y={0.5} />
-          <Input.Password
-            bordered
-            clearable
-            label="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </Card.Body>
-        <Card.Footer>
-          <Row justify="flex-end">
-            <Button color={"secondary"} ghost onPress={handleSignUp}>
-              Create Account
-            </Button>
-          </Row>
-        </Card.Footer>
+        <form>
+          <Card.Body>
+            <Input
+              bordered
+              clearable
+              label="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <Spacer y={0.5} />
+            <Input.Password
+              bordered
+              clearable
+              label="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Card.Body>
+          <Card.Footer>
+            <Row justify="flex-end">
+              <Button color={"secondary"} ghost onPress={handleSignUp}>
+                Create Account
+              </Button>
+            </Row>
+          </Card.Footer>
+        </form>
       </Card>
     </Container>
   )
